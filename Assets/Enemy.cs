@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -11,6 +12,8 @@ public class Enemy : MonoBehaviour
     private Vector2 moveDirection;
     private SpriteRenderer _spriteRenderer;
     private bool isDefeated = false;
+    public ContactFilter2D movementFilter;
+    private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
 
     public void Awake()
@@ -50,9 +53,11 @@ public class Enemy : MonoBehaviour
             {
                 _spriteRenderer.flipX = false;
             }
+            
         }
     }
-
+    //TODO check potential collision
+    
     public float hp
     {
         set

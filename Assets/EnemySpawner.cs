@@ -14,7 +14,7 @@ public class EnemySpawner : MonoBehaviour
         counter += Time.deltaTime;
         int randomPos = Random.Range(0, spawnPoints.Length);
         // 10 means 10 seconds
-        if (counter > 10 && currentSpawned < maxSpawnNumber)
+        if (counter > 5 && currentSpawned < maxSpawnNumber)
         {
             counter = 0;
             currentSpawned++;
