@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     private Vector2 moveDirection;
     private SpriteRenderer _spriteRenderer;
     private bool isDefeated = false;
+    private bool isHit = true;
     public ContactFilter2D movementFilter;
     private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
@@ -67,18 +68,24 @@ public class Enemy : MonoBehaviour
             {
                 Defeated();
             }
+            
         }
         get
         {
             return health;
+            
         }
+        
     }
 
     public void Defeated()
     {
         _animator.SetTrigger("Dead");
-        isDefeated = true;
-
+        if (health <= 0)
+        {
+            moveSpeed = 0;
+        }
+        
     }
     
     

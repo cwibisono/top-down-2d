@@ -147,6 +147,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  rb: {fileID: 0}
   swordAttack: {fileID: 0}
 --- !u!50 &3010433515168712851
 Rigidbody2D:
